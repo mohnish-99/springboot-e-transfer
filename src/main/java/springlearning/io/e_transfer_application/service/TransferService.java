@@ -1,0 +1,12 @@
+package springlearning.io.e_transfer_application.service;
+
+import springlearning.io.e_transfer_application.dto.TransferRequest;
+import springlearning.io.e_transfer_application.dto.TransferResponse;
+import springlearning.io.e_transfer_application.exception.AccountNotFoundException;
+import springlearning.io.e_transfer_application.exception.DuplicateTransactionException;
+import springlearning.io.e_transfer_application.exception.InsufficientBalanceException;
+import springlearning.io.e_transfer_application.exception.InvalidIdentifierException;
+
+public interface TransferService {
+    TransferResponse transfer(TransferRequest request) throws InvalidIdentifierException, InsufficientBalanceException, DuplicateTransactionException, AccountNotFoundException;
+}

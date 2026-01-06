@@ -1,9 +1,6 @@
 package springlearning.io.e_transfer_application.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -24,6 +21,9 @@ public class Transfer {
     private Long receiverId;
 
     private BigDecimal amount;
+
+    @Column(unique = true, nullable = false)
+    private String idempotencyKey;
 
     @Enumerated
     private TransferStatus status;
