@@ -32,7 +32,7 @@ public class TransferServiceImpl implements TransferService{
 
     @Override
     @Transactional
-    public TransferResponse transfer(TransferRequest request) throws InvalidIdentifierException, InsufficientBalanceException, DuplicateTransactionException, AccountNotFoundException {
+    public TransferResponse transfer(TransferRequest request){
 
         //TODO: REMOVE THOWS from method signature and write global exception handler
 
